@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+	{% block more_head %}{% endblock %}
+</head>
+<body id="index" class="home">
+	{% include 'main-body-top.html' %}
+
+	<!-- #banner -->
+	{% block banner %}
+	<header id="banner", class="body">
+	<h1><a href="{{ SITEURL }}/">
+		{{ SITENAME }}
+		{% if SITESUBTITLE %}
+		<strong>{{ SITESUBTITLE }}</strong>
+		{% endif %}
+	</a></h1>
+		<nav><ul>
+			{% for title, link in MENUITEMS %}
+			<li><a href="{{ link }}">{{ title }}</a></li>
+			{% endfor %}
+			{% if DISPLAY_PAGES_ON_MENU %}
+			{% for page in PAGES %}
+			<li><a href="{{ SITEURL }}/{{ page.url }}">
+				{{ page.title }}
+			</a></li>
+			{% endfor %}
+			{% endif %}
+			{% if DISPLAY_CATEGORIES_ON_MENU %}
+			{% for cat, null in categories %}
+			<li {% if cat == category %}class="active"{% endif %}>
+				<a href="{{ SITEURL }}/{{ cat.url }}">
+					{{ cat }}
+				</a>
+			</li>
+			{% endfor %}
+			{% endif %}
+		</ul></nav>
+	</header>
+	{% endblock %}
+	<!-- /#banner -->
+
+	<!-- #content -->
+	{% block content %}
+	{% endblock %}
+	<!-- /#content -->
+
+	<!-- #extras -->
+	{% block extras %}
+	<section id="extras" class="body">
+	{% if LINKS %}
+	<div class="blogroll">
+		<h2>blogroll</h2>
+		<ul>
+			{% for name, link in LINKS %}
+			<li><a href="{{ link }}">{{ name }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+	{% endif %}
+	{% if SOCIAL %}
+	<div class="social">
+		<h2>social</h2>
+		<ul>
+			{% for name, link in SOCIAL %}
+			<li><a href="{{ link }}">{{ name }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+	{% endif %}
+	<section id="extras" class="body">
+	{% endblock %}
+	<!-- /#extras -->
+
+	<footer id="contentinfo" class="body">
+		<p>
+			Proudly powered by <a href="http://getpelican.com">Pelican</a>,
+			which takes great advantage of
+			<a href="http://python.org">Python</a>
+		</p>
+		<p>
+			This theme was originally created for
+			<a href="www.byronjsmith.com">www.byronjsmith.com</a>
+		</p>
+	</footer>
+	
+	{% include 'main-body-bottom.html' %}
+</body>
+</html>
