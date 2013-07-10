@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+
 {% block content %}
 <div id="content" class="index">
-	<!-- #content-title -->
-	{% block content_title %}
-	<h2>All articles</h2>
-	{% endblock %}
-	<!-- /#content-title -->
+	<h2 id="index-title" class="title">
+		{% block content_title %}
+		All articles
+		{% endblock %}
+	</h2>
 	<ol id="post-list">
 	{% for article in articles_page.object_list %}
 		<li><article class="hentry">

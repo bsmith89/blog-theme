@@ -5,8 +5,10 @@ body {
 	background: url('../images/textured_paper_red.png')
 }
 
-#text {
+#all-text {
 	width: 75%;
+	min-width: 500px;
+	max-width: 800px;
 	margin: 0 auto;
 }
 
