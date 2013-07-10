@@ -1,0 +1,27 @@
+/* Imports */
+@import url("pygment-manni.css");
+
+body {
+	background: url('../images/textured_paper_red.png')
+}
+
+#text {
+	width: 75%;
+	margin: 0 auto;
+}
+
+#content {
+	background: #fff;
+	margin-bottom: 2em;
+	padding: 20px 20px;
+	border-radius: 10px;
+}
+
+#post-list {
+	list-style: none;
+}
+
+#blog-subtitle {
+	font-size: 75%;
+	font-weight: 75%;
+}

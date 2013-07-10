@@ -3,20 +3,25 @@
 <head>
 	<meta charset="utf-8">
 	<title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+	{% include 'rss.html' %}
 	{% block more_head %}{% endblock %}
+	<link rel="stylesheet" type="text/css" href="./theme/css/main.css" />
 </head>
-<body id="index" class="home">
-	{% include 'main-body-top.html' %}
 
+<body id="main">
+	{% include 'scripts-top.html' %}
+	<div id="text">
 	<!-- #banner -->
-	{% block banner %}
-	<header id="banner", class="body">
-	<h1><a href="{{ SITEURL }}/">
-		{{ SITENAME }}
-		{% if SITESUBTITLE %}
-		<strong>{{ SITESUBTITLE }}</strong>
-		{% endif %}
-	</a></h1>
+		{% block banner %}
+		<header id="banner">
+		<h1 id="blog-title"><a href="{{ SITEURL }}/">
+			{{ SITENAME }}
+			{% if SITESUBTITLE %}
+			<span id="blog-subtitle">
+				{{ SITESUBTITLE }}
+			</span>
+			{% endif %}
+		</a></h1>
 		<nav><ul>
 			{% for title, link in MENUITEMS %}
 			<li><a href="{{ link }}">{{ title }}</a></li>
@@ -38,54 +43,54 @@
 			{% endfor %}
 			{% endif %}
 		</ul></nav>
-	</header>
-	{% endblock %}
-	<!-- /#banner -->
+		</header>
+		{% endblock %}
+		<!-- /#banner -->
 
-	<!-- #content -->
-	{% block content %}
-	{% endblock %}
-	<!-- /#content -->
+		<!-- #content -->
+		{% block content %}
+		{% endblock %}
+		<!-- /#content -->
 
-	<!-- #extras -->
-	{% block extras %}
-	<section id="extras" class="body">
-	{% if LINKS %}
-	<div class="blogroll">
-		<h2>blogroll</h2>
-		<ul>
-			{% for name, link in LINKS %}
-			<li><a href="{{ link }}">{{ name }}</a></li>
-			{% endfor %}
-		</ul>
-	</div>
-	{% endif %}
-	{% if SOCIAL %}
-	<div class="social">
-		<h2>social</h2>
-		<ul>
-			{% for name, link in SOCIAL %}
-			<li><a href="{{ link }}">{{ name }}</a></li>
-			{% endfor %}
-		</ul>
-	</div>
-	{% endif %}
-	<section id="extras" class="body">
-	{% endblock %}
-	<!-- /#extras -->
+		<!-- #extras -->
+		{% block extras %}
+		<section id="extras">
+			{% if LINKS %}
+			<div class="blogroll">
+				<h2>blogroll</h2>
+				<ul>
+					{% for name, link in LINKS %}
+					<li><a href="{{ link }}">{{ name }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+			{% endif %}
+			{% if SOCIAL %}
+			<div class="social">
+				<h2>social</h2>
+				<ul>
+					{% for name, link in SOCIAL %}
+					<li><a href="{{ link }}">{{ name }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+			{% endif %}
+		</section>
+		{% endblock %}
+		<!-- /#extras -->
 
-	<footer id="contentinfo" class="body">
-		<p>
-			Proudly powered by <a href="http://getpelican.com">Pelican</a>,
-			which takes great advantage of
-			<a href="http://python.org">Python</a>
-		</p>
-		<p>
-			This theme was originally created for
-			<a href="www.byronjsmith.com">www.byronjsmith.com</a>
-		</p>
-	</footer>
-	
-	{% include 'main-body-bottom.html' %}
+		<footer id="contentinfo">
+			<p>
+				Proudly powered by <a href="http://getpelican.com">Pelican</a>,
+				which takes great advantage of
+				<a href="http://python.org">Python</a>
+			</p>
+			<p>
+				This theme was originally created for
+				<a href="www.byronjsmith.com">www.byronjsmith.com</a>
+			</p>
+		</footer>
+	</div> <!-- /#text -->
+	{% include 'scripts-bottom.html' %}
 </body>
 </html>
