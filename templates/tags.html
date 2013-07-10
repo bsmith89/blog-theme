@@ -7,9 +7,9 @@
 {% block content %}
 <div id="content" class="index">
 	<h2 id="index-title" class="title">
-		Tags
+		Tags for {{ SITENAME }}
 	</h2>
-	<ul id="post-list">
+	<ul id="tag-list" class="attr-list">
 		{% for tag, article in tags %}
 		<li><a href="{{ SITEURL }}/{{ tag.url }}">
 			{{ tag }}

@@ -9,7 +9,7 @@
 	<h2 id="index-title" class="title">
 		Archives for {{ SITENAME }}
 	</h2>
-	<dl id="post-list">
+	<dl id="date-list" class="attr-list">
 		{% for article in dates %}
 		<dt>{{ article.locale_date }}</dt>
 		<dd><a href="{{ SITEURL }}/{{ article.url }}">

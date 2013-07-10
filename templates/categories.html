@@ -7,9 +7,9 @@
 {% block content %}
 <div id="content" class="index">
 	<h2 id="index-title" class="title">
-		Categories
+		Categories for {{ SITENAME }}
 	</h2>
-	<ul id="post-list">
+	<ul id="category-list" class="attr-list">
 		{% for category, article in categories %}
 		<li><a href="{{ SITEURL }}/{{ category.url }}">
 			{{ category }}
