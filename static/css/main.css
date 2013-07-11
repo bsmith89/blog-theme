@@ -120,6 +120,15 @@ a:visited {
 		list-style: none
 	}
 
+	#entry-list li {
+		margin-bottom: 30px;
+	}
+
+	.read-more {
+		display: block;
+		float: right;
+	}
+
 /* Footer */
 #extras div {
 	display: inline-block;

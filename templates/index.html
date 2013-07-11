@@ -35,6 +35,11 @@
 			<div class="content">
 				{{ article.summary }}
 			</div><!-- /content -->
+			<div class="read-more">
+				<a href="{{ SITEURL }}/{{ article.url }}">
+					...More
+				</a>
+			</div>
 		</article></li>
 	{% endfor %}
 	</ol><!-- /#posts-list -->
