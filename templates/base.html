@@ -12,95 +12,101 @@
 	{% include 'scripts-top.html' %}
 	<div id="all-text">
 		{% block banner %}
-		<header id="banner">
+		<header id="main-banner" class="banner">
 		<h1 id="blog-title" class="title"><a href="{{ SITEURL }}/">
 			{{ SITENAME }}
 			{% if SITESUBTITLE %}
-			<span id="blog-subtitle">
+			<span id="blog-subtitle" class="subtitle">
 				{{ SITESUBTITLE }}
 			</span>
 			{% endif %}
 		</a></h1>
 		<nav><ul>
 			{% for title, link in MENUITEMS %}
-			<li><a href="{{ link }}">{{ title }}</a></li>
+			<li><a href="{{ link }}">
+				{{ title }}
+			</a></li>
 			{% endfor %}
 			{% if DISPLAY_PAGES_ON_MENU %}
-			{% for page in PAGES %}
-			<li><a href="{{ SITEURL }}/{{ page.url }}">
-				{{ page.title }}
+			{% for each_page in PAGES %}
+			<li><a  href="{{ SITEURL }}/{{ each_page.url }}"
+					{% if each_page == page %}
+					class="active"
+					{% endif %}>
+				{{ each_page.title }}
 			</a></li>
 			{% endfor %}
 			{% endif %}
 			{% if DISPLAY_CATEGORIES_ON_MENU %}
 			{% for cat, null in categories %}
-			<li {% if cat == category %}class="active"{% endif %}>
-				<a href="{{ SITEURL }}/{{ cat.url }}">
-					{{ cat }}
-				</a>
-			</li>
+			<li><a  href="{{ SITEURL }}/{{ cat.url }}"
+					{% if cat == category %}
+					class="active"
+					{% endif %}>
+				{{ cat }}
+			</a></li>
 			{% endfor %}
 			{% endif %}
 		</ul></nav>
 		</header><!-- /#banner -->
 		{% endblock %}
 
-		<!-- block:content -->
-		{% block content %}
-		{% endblock %}
-		<!-- /block:content -->
+		<div id="content">
+			{% block content %}
+			{% endblock %}
+		</div><!-- /#content -->
 
-		<!-- block:extras -->
-		{% block extras %}
-		<section id="extras">
-			{% if LINKS %}
-			<div class="blogroll">
-				<h2>blogroll</h2>
-				<ul>
-					{% for name, link in LINKS %}
-					<li><a href="{{ link }}">{{ name }}</a></li>
-					{% endfor %}
-				</ul>
-			</div>
-			{% endif %}
-			{% if SOCIAL or FEED_ALL_ATOM or FEED_ALL_RSS %}
-			<div class="social">
-				<h2>social</h2>
-				<ul>
-					{% if FEED_ALL_ATOM %}
-					<li><a  href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}"
-							type="application/atom+xml"
-							rel="alternate">
-						atom feed
-					</a></li>
-					{% elif FEED_ALL_RSS %}
-					<li><a  href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}"
-							type="application/rss+xml"
-							rel="alternate">
-						rss feed
-					</a></li>
-					{% endif %}
-					{% for name, link in SOCIAL %}
-					<li><a href="{{ link }}">{{ name }}</a></li>
-					{% endfor %}
-				</ul>
-			</div>
-			{% endif %}
-		</section>
-		{% endblock %}
-		<!-- /block:extras -->
+		<footer id="bottom">
+			<div id="extras">
+				{% block extras %}
+				{% if LINKS %}
+				<div class="blogroll">
+					<h2>blogroll</h2>
+					<ul>
+						{% for name, link in LINKS %}
+						<li><a href="{{ link }}">{{ name }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+				{% endif %}
+				{% if SOCIAL or FEED_ALL_ATOM or FEED_ALL_RSS %}
+				<div class="social">
+					<h2>social</h2>
+					<ul>
+						{% if FEED_ALL_ATOM %}
+						<li><a  href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}"
+								type="application/atom+xml"
+								rel="alternate">
+							atom feed
+						</a></li>
+						{% elif FEED_ALL_RSS %}
+						<li><a  href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}"
+								type="application/rss+xml"
+								rel="alternate">
+							rss feed
+						</a></li>
+						{% endif %}
+						{% for name, link in SOCIAL %}
+						<li><a href="{{ link }}">{{ name }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+				{% endif %}
+				{% endblock extras %}
+			</div><!-- /#extras -->
 
-		<footer id="contentinfo">
-			<p>
-				Proudly powered by <a href="http://getpelican.com">Pelican</a>,
-				which takes great advantage of
-				<a href="http://python.org">Python</a>
-			</p>
-			<p>
-				This theme was originally created for
-				<a href="blog.byronjsmith.com">blog.byronjsmith.com</a>
-			</p>
-		</footer>
+			<div id="info">
+				<p id="powered-by">
+					Proudly powered by <a href="http://getpelican.com">Pelican</a>,
+					which takes great advantage of
+					<a href="//python.org">Python</a>
+				</p>
+				<p id="designed-by">
+					This theme was originally created for
+					<a href="//blog.byronjsmith.com">blog.byronjsmith.com</a>
+				</p>
+			</div>
+		</footer><!-- #bottom -->
 	</div> <!-- /#all-text -->
 	{% include 'scripts-bottom.html' %}
 </body>

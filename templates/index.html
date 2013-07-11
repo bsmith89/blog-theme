@@ -1,23 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div id="content" class="index">
-	<h2 id="index-title" class="title">
+<div class="index">
+	<h1 id="main-title">
 		{% block content_title %}
+		<!--
 		All articles
+		-->
 		{% endblock %}
-	</h2>
-	<ol id="post-list">
+	</h1>
+	<ol id="entry-list">
 	{% for article in articles_page.object_list %}
-		<li><article class="hentry">
-			<header><h2 class="entry-title">
+		<li><article class="entry">
+			<header><h2 class="title">
 				<a  href="{{ SITEURL }}/{{ article.url }}"
 					rel="bookmark"
 					title="Permalink to {{ article.title|striptags }}">
 					{{ article.title }}
 				</a>
 			</h2></header>
-			<footer class="post-info">
+			<footer class="info">
 				<abbr class="published" title="{{ article.date.isoformat() }}">
 					{{ article.locale_date }}
 				</abbr>
@@ -26,13 +28,13 @@
 					By
 					<a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">
 						{{ article.author }}
-					<a>
+					</a>
 				</address>
 				{% endif %}
 			</footer><!-- /.post-info -->
-			<div class="entry-content">
+			<div class="content">
 				{{ article.summary }}
-			</div><!-- /.entry-content -->
+			</div><!-- /content -->
 		</article></li>
 	{% endfor %}
 	</ol><!-- /#posts-list -->

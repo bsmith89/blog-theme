@@ -1,17 +1,18 @@
 {% extends "base.html" %}
+
 {% block content %}
-<div id="content" class="article">
+<article>
 	<header>
-		<h2 id="focal-title" class="post-title">
+		<h1 id="main-title">
 			<a  href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
 				title="Permalink to {{ article.title|striptags }}">
 				{{ article.title }}
 			</a>
-		</h2>
+		</h1>
 	{% import 'translations.html' as translations with context %}
 	{{ translations.translations_for(article) }}
 	</header>
-	<footer id="focal-info" class="post-info">
+	<footer class="info">
 		<abbr class="published" title="{{ article.date.isoformat() }}">
 			{{ article.locale_date }}
 		</abbr>
@@ -23,9 +24,25 @@
 			</a>
 		</address>
 		{% endif %}
-	</footer><!-- /#post-info -->
-	<div id="focal-content" class="post-content">
+	</footer><!-- /.info -->
+	<div class="content">
 		{{ article.content }}
-	</div><!-- /#focal-content -->
-</div><!-- /#content -->
+	</div><!-- /.content -->
+</article>
+
+{% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
+<div id="comments">
+	<h2>Comments</h2>
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+		var disqus_identifier = "{{ article.url }}";
+		var disqus_url = "{{ SITEURL }}/{{ article.url }}";
+		(function() {
+			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			dsq.src = 'http://{{ DISQUS_SITENAME }}.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+	</script>
+</div><!-- /#comments -->
+{% endif %}
 {% endblock %}

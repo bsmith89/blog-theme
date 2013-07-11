@@ -5,16 +5,14 @@
 {% endblock title %}
 
 {% block content %}
-<div id="content" class="index">
-	<h2 id="index-title" class="title">
-		Tags for {{ SITENAME }}
-	</h2>
-	<ul id="tag-list" class="attr-list">
-		{% for tag, article in tags %}
-		<li><a href="{{ SITEURL }}/{{ tag.url }}">
-			{{ tag }}
-		</a></li>
-		{% endfor %}
-	</ul>
-</div><!-- /#content -->
+<h1 id="main-title">
+	Tags for {{ SITENAME }}
+</h1>
+<ul id="tag-list">
+	{% for tag, article in tags %}
+	<li><a href="{{ SITEURL }}/{{ tag.url }}">
+		{{ tag }}
+	</a></li>
+	{% endfor %}
+</ul>
 {% endblock content %}

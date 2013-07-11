@@ -1,29 +1,150 @@
-/* Imports */
-@import url("pygment-manni.css");
+@import url(pygment-manni.css);
+@import url(//fonts.googleapis.com/css?family=Monda:400,700|Inconsolata|Roboto+Slab);
 
+/* Background and Universal */
 body {
-	background: url('../images/textured_paper_red.png')
+	background: url('../images/textured_paper_red.png');
+	color: #101010;
+	font-family: "Roboto Slab", Times, serif;
+	text-align: left;
 }
 
+/* Universal */
 #all-text {
 	width: 75%;
-	min-width: 500px;
 	max-width: 800px;
 	margin: 0 auto;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Monda", Arial, sans-serif;
+	font-weight: 400;
+}
+
+a:link {
+	color: #C74451;
+}
+
+a:visited {
+	color: #A137A1;
+}
+
+
+/* Banner */
+.banner a {
+	color: inherit;
+	text-decoration: none;
+}
+
+#blog-title {
+	font-size: 2.25em;
+	font-family: "Monda", Arial, sans-serif;
+	font-weight: 700;
+}
+
+#blog-subtitle {
+	font-size: 65%;
+	font-weight: 400;
+}
+
+	/* Nav Bar */
+	.banner nav {
+		background: #101010;
+		color: #fff;
+		border-radius: 7px;
+	}
+
+	.banner nav ul {
+		list-style: none;
+	}
+
+	.banner nav li {
+		display: inline;
+	}
+
+	.banner nav a {
+		display: inline-block;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.banner nav a:hover {
+		color: #C74451;
+	}
+
+	.banner nav a.active {
+		background: #C74451;
+	}
+
+	.banner nav a.active:hover {
+		color: #fff;
+	}
+
+/* Content */
 #content {
 	background: #fff;
 	margin-bottom: 2em;
 	padding: 20px 20px;
-	border-radius: 10px;
+	border-radius: 7px;
 }
 
-#post-list {
-	list-style: none;
+	/* Page Content */
+		/* Links */
+		.content a:hover, .content a:active {
+			background: #C7EEEA;
+			border-radius: 2px;
+		}
+
+		.info a:visited {
+			color: #C74451;
+		}
+
+		/* Code */
+		pre code {
+			font-family: "Inconsolata", monospace;
+		}
+
+	#main-title {
+		font-size: 2em;
+	}
+
+	#main-title a {
+		color: inherit;
+		text-decoration: none;
+	}
+	
+	/* Index */
+	.index ol {
+		list-style: none
+	}
+
+/* Footer */
+#extras div {
+	display: inline-block;
 }
 
-#blog-subtitle {
-	font-size: 75%;
-	font-weight: 75%;
+#extras .extras {
+	float: left;
+}
+
+#extras .social {
+	float: right;
+	padding-right: 30px;
+}
+
+#bottom #info {
+	font-size: 90%;
+}
+
+#bottom #powered-by {
+	background: #fff;
+	padding: 20px 20px;
+	border-radius: 7px;
+}
+
+#bottom #designed-by {
+	text-align: right;
+	margin: 30px 10px;
 }

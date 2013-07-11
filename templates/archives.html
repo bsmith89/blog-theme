@@ -5,11 +5,10 @@
 {% endblock title %}
 
 {% block content %}
-<div id="content" class="index">
-	<h2 id="index-title" class="title">
+	<h1 id="main-title">
 		Archives for {{ SITENAME }}
-	</h2>
-	<dl id="date-list" class="attr-list">
+	</h1>
+	<dl id="date-list">
 		{% for article in dates %}
 		<dt>{{ article.locale_date }}</dt>
 		<dd><a href="{{ SITEURL }}/{{ article.url }}">
@@ -17,5 +16,4 @@
 		</a></dd>
 		{% endfor %}
 	</dl>
-</div><!-- /#content -->
 {% endblock %}
