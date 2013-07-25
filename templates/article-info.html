@@ -1,0 +1,40 @@
+<div class="published">
+	<span class="info-tag">published:</span>
+	<abbr class="published" title="{{ article.date }}">
+		{{ article.locale_date }}
+	</abbr>
+</div>
+
+{% if article.modified %}
+<div class="modified">
+	<span class="info-tag">modified:</span>
+	{{ article.modified }}
+</div>
+{% endif %}
+
+{% if article.author %}
+<div class="author">
+	<address class="vcard author">
+		<span class="info-tag">author:</span>
+		<a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">
+			{{ article.author }}
+		</a>
+	</address>
+</div>
+{% endif %}
+
+<div class="category">
+	<span class="info-tag">category:</span>
+	<a href="{{ SITEURL }}/{{ article.category.url }}">
+		{{ article.category }}
+	</a>
+</div>
+
+{% if article.tags %}
+<div class="tags">
+	<span class="info-tag">tags:</span>
+	{% for tag in article.tags %}
+	<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+	{% endfor %}
+</div><!-- /.tags -->
+{% endif %}

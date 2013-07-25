@@ -13,17 +13,7 @@
 	{{ translations.translations_for(article) }}
 	</header>
 	<footer class="info">
-		<abbr class="published" title="{{ article.date.isoformat() }}">
-			{{ article.locale_date }}
-		</abbr>
-		{% if article.author %}
-		<address class="vcard author">
-			By
-			<a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">
-				{{ article.author }}
-			</a>
-		</address>
-		{% endif %}
+		{% include "article-info.html" %}
 	</footer><!-- /.info -->
 	<div class="content">
 		{{ article.content }}

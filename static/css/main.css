@@ -13,6 +13,7 @@ body {
 #all-text {
 	width: 75%;
 	max-width: 800px;
+	min-width: 300px;
 	margin: 0 auto;
 }
 
@@ -86,7 +87,7 @@ a:visited {
 #content {
 	background: #fff;
 	margin-bottom: 2em;
-	padding: 20px 20px;
+	padding: 20px 60px;
 	border-radius: 7px;
 }
 
@@ -95,10 +96,6 @@ a:visited {
 		.content a:hover, .content a:active {
 			background: #C7EEEA;
 			border-radius: 2px;
-		}
-
-		.info a:visited {
-			color: #C74451;
 		}
 
 		/* Code */
@@ -115,13 +112,45 @@ a:visited {
 		text-decoration: none;
 	}
 	
+	/* Article Info */
+	.info {
+		float: right;
+		padding: 10px;
+		margin-left: 10px;
+		margin-bottom: 10px;
+		width: 300px;
+		border-radius: 10px;
+	}
+
+	.info address {
+		font-style: normal;
+	}
+
+	.info .info-tag {
+		font-style: italic;
+	}
+
+	.info .published .info-tag {
+		display: none;
+	}
+
+	.info a:visited {
+		color: #C74451;
+	}
+
+	.info a:hover {
+		background: #C7EEEA;
+		border-radius: 5px;
+	}
+
 	/* Index */
 	.index ol {
-		list-style: none
+		padding-left: 0;
+		list-style: none;
 	}
 
 	#entry-list li {
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 	}
 
 	#entry-list .title a {
@@ -130,8 +159,7 @@ a:visited {
 	}
 
 	.read-more {
-		display: block;
-		float: right;
+		text-align: right;
 	}
 
 /* Footer */
