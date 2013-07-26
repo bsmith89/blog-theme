@@ -133,10 +133,6 @@ a:visited {
 		display: none;
 	}
 
-	.info .author {
-		display: none;
-	}
-
 	.info a:visited {
 		color: #C74451;
 	}

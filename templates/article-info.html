@@ -14,7 +14,7 @@
 </div>
 {% endif %}
 
-{% if article.author %}
+{% if article.author and article.author != AUTHOR %}
 <div class="author">
 	<address class="vcard author">
 		<span class="info-tag">author:</span>
