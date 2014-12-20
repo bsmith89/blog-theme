@@ -6,6 +6,7 @@
 	{% include 'syndication.html' %}
 	{% block more_head %}{% endblock %}
 	<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/main.css" />
+    {% include 'scripts-head.html' %}
 </head>
 
 <body id="main">
@@ -108,6 +109,8 @@
 			</div>
 		</footer><!-- #bottom -->
 	</div> <!-- /#all-text -->
-	{% include 'scripts-bottom.html' %}
+	{% include 'base-scripts-bottom.html' %}
+    {% block extra_scripts_bottom %}
+    {% endblock extra_scripts_bottom %}
 </body>
 </html>
