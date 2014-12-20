@@ -27,6 +27,7 @@
 </div>
 {% endif %}
 
+{% if (articles and (not category)) or (not articles_paginator) %}
 <div class="category">
 	<span class="info-tag">category:</span>
 	<span class="info-value">
@@ -35,6 +36,7 @@
 		</a>
 	</span>
 </div>
+{% endif %}
 
 {% if article.tags %}
 <div class="tags">
