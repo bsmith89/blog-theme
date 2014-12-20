@@ -149,6 +149,10 @@ a:visited {
 		display: none;
 	}
 
+    .info .published {
+        font-weight: bold;
+    }
+
 	.info a:visited {
 		color: #C74451;
 	}
