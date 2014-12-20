@@ -3,5 +3,8 @@
 {% block title %}{{ author }} - {{ SITENAME }}{% endblock %}
 
 {% block content_title %}
-Articles by <em>{{ author }}</em>
+Articles by
+<span itemscope itemtype="http://data-vocabulary.org/Person">
+    <em itemprop="name">{{ author }}</em>
+</span>
 {% endblock content_title %}
