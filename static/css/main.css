@@ -3,7 +3,8 @@
 
 /* Background and Universal */
 body {
-	background: url('../images/textured_paper_red.png');
+	/* background: url('../images/textured_paper_red.png'); */
+    background: #e8e8e8;
 	color: #101010;
 	font-family: "Roboto Slab", Times, serif;
 	text-align: left;
