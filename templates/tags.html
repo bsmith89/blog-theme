@@ -9,7 +9,7 @@
 	Tags for {{ SITENAME }}
 </h1>
 <ul id="tag-list">
-	{% for tag, article in tags %}
+	{% for tag, article in tags|sort %}
 	<li><a href="{{ SITEURL }}/{{ tag.url }}">
 		{{ tag }}
 	</a></li>
