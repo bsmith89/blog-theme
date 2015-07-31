@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<article>
+<article itemscope itemtype="http://schema.org/BlogPosting">
 	<header>
-		<h1 id="main-title">
+		<h1 id="main-title" itemprop="headline">
 			<a  href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
 				title="Permalink to {{ article.title|striptags }}">
 				{{ article.title }}
@@ -15,7 +15,7 @@
 	<footer class="info">
 		{% include "article-info.html" %}
 	</footer><!-- /.info -->
-	<div class="content">
+	<div class="content" itemprop="articleBody">
 		{{ article.content }}
 	</div><!-- /.content -->
     {{ articles_paginator }}
