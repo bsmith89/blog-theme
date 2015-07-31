@@ -9,9 +9,10 @@
 
 {% if article.modified %}
 <div class="modified">
-	<span class="info-tag">modified:</span>
+	<span class="info-tag">edited:</span>
 	<span class="info-value" itemprop="dateModified">
 		<abbr title="{{ article.modified }}">
+            <!-- Filter this through whatever's used for locale_date -->
 			{{ article.modified }}
 		</abbr>
     </span>
