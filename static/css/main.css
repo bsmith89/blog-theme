@@ -99,6 +99,10 @@ a:visited {
 	border-radius: 7px;
 }
 
+.content {
+    min-height: 130px
+}
+
 	/* Page Content */
 		/* Links */
 		.content a:hover, .content a:active {
