@@ -205,8 +205,12 @@ a:visited {
         list-style: none;
     }
 
-    #entry-list li {
+    #entry-list .entry {
         margin-bottom: 3em;
+    }
+
+    #entry-list .entry ul {
+        list-style: initial;
     }
 
     #entry-list .title a {
