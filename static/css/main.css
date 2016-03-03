@@ -119,6 +119,9 @@ a:visited {
         .content pre, .content code {
             font-family: "Inconsolata";
             line-height: 120%;
+            tab-size: 4;
+            -moz-tab-size: 4;
+            -o-tab-size: 4;
         }
 
         .content blockquote {
