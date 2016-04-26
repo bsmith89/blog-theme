@@ -12,13 +12,13 @@
 	<ol id="entry-list">
 	{% for article in articles_page.object_list %}
 		<li><article class="entry">
-			<header><h2 class="title">
+			<header><h1 class="title">
 				<a  href="{{ SITEURL }}/{{ article.url }}"
 					rel="bookmark"
 					title="Permalink to '{{ article.title | striptags }}'">
 					{{ article.title }}
 				</a>
-			</h2></header>
+			</h1></header>
 			<footer class="info">
 				{% include "article-info.html" %}
 			</footer><!-- /.info -->
