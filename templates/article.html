@@ -13,11 +13,11 @@
 	{{ translations.translations_for(article) }}
 	</header>
 	<footer class="info">
-		{% include "article-info.html" %}
-	</footer><!-- /.info -->
+		{% include 'parts/article-info.html' %}
+	</footer>
 	<div class="content" itemprop="articleBody">
 		{{ article.content }}
-	</div><!-- /.content -->
+	</div>
     {{ articles_paginator }}
 </article>
 
@@ -25,10 +25,14 @@
 <div id="comments">
 	<h2>Comments</h2>
 	<div id="disqus_thread"></div>
-</div><!-- /#comments -->
+</div>
 {% endif %}
 {% endblock %}
 
-{% block extra_scripts_bottom %}
-{% include 'disqus-script.html' %}
-{% endblock extra_scripts_bottom %}
+{% block scripts_body_bottom_add %}
+<!-- #disqus-script -->
+{% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
+{% include 'parts/disqus-script.html' %}
+{% endif %}
+<!-- /#disqus-script -->
+{% endblock scripts_body_bottom_add %}

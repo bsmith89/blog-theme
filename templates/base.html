@@ -4,14 +4,14 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{% block title %}{{ SITENAME }}{% endblock %}</title>
-	{% include 'syndication.html' %}
-	{% block more_head %}{% endblock %}
+	{% include 'parts/base-syndication.html' %}
+	{% block head_add %}{% endblock %}
 	<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/main.css" />
-    {% include 'scripts-head.html' %}
+    {% include 'parts/base-scripts-head.html' %}
 </head>
 
 <body id="main">
-	{% include 'scripts-top.html' %}
+	{% include 'parts/github-ribbon.html' %}
 	<div id="all-text">
 		{% block banner %}
 		<header id="main-banner" class="banner">
@@ -110,8 +110,10 @@
 			</div>
 		</footer><!-- #bottom -->
 	</div> <!-- /#all-text -->
-	{% include 'base-scripts-bottom.html' %}
-    {% block extra_scripts_bottom %}
-    {% endblock extra_scripts_bottom %}
+	{% include 'parts/base-scripts-body-bottom.html' %}
+	<!--scripts_body_bottom_add-->
+	{% block scripts_body_bottom_add %}
+	{% endblock scripts_body_bottom_add %}
+	<!--/scripts_body_bottom_add-->
 </body>
 </html>

@@ -20,7 +20,7 @@
 				</a>
 			</h1></header>
 			<footer class="info">
-				{% include "article-info.html" %}
+				{% include 'parts/article-info.html' %}
 			</footer><!-- /.info -->
 			<div class="content">
 				{{ article.summary }}
@@ -33,6 +33,6 @@
 		</article></li>
 	{% endfor %}
 	</ol><!-- /#posts-list -->
-	{% include 'pagination.html' %}
+	{% include 'parts/pagination.html' %}
 </div><!-- /#content -->
 {% endblock content %}
