@@ -1,5 +1,3 @@
-@import url(pygment.css);
-
     /* Icons */
     .social a[href*='about.me'] {background-image: url('../images/icons/aboutme.png');}
     .social a[href*='bitbucket.org'] {background-image: url('../images/icons/bitbucket.png');}
