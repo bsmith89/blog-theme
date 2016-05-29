@@ -6,13 +6,13 @@
 
 {% block content %}
 <h1 id="main-title">
-	Tags for {{ SITENAME }}
+  Tags for {{ SITENAME }}
 </h1>
 <ul id="tag-list">
-	{% for tag, article in tags | sort %}
-	<li><a href="{{ SITEURL }}/{{ tag.url }}">
-		{{ tag }}
-	</a></li>
-	{% endfor %}
+  {% for tag, article in tags | sort %}
+  <li><a href="{{ SITEURL }}/{{ tag.url }}">
+    {{ tag }}
+  </a></li>
+  {% endfor %}
 </ul>
 {% endblock content %}

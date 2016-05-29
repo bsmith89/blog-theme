@@ -2,37 +2,35 @@
 
 {% block content %}
 <div class="index">
-	<h1 id="main-title">
-		{% block content_title %}
-		<!--
-		All articles
-		-->
-		{% endblock %}
-	</h1>
-	<ol id="entry-list">
-	{% for article in articles_page.object_list %}
-		<li><article class="entry">
-			<header><h1 class="title">
-				<a  href="{{ SITEURL }}/{{ article.url }}"
-					rel="bookmark"
-					title="Permalink to '{{ article.title | striptags }}'">
-					{{ article.title }}
-				</a>
-			</h1></header>
-			<footer class="info">
-				{% include 'parts/article-info.html' %}
-			</footer><!-- /.info -->
-			<div class="content">
-				{{ article.summary }}
-				<div class="read-more">
-					<a href="{{ SITEURL }}/{{ article.url }}">
-						...More
-					</a>
-				</div>
-			</div><!-- /content -->
-		</article></li>
-	{% endfor %}
-	</ol><!-- /#posts-list -->
-	{% include 'parts/pagination.html' %}
+  <h1 id="main-title">
+    {% block content_title %}
+    <!--
+    All articles
+    -->
+    {% endblock %}
+  </h1>
+  <ol id="entry-list">
+  {% for article in articles_page.object_list %}
+    <li><article class="entry">
+      <header><h1 class="title">
+        <a  href="{{ SITEURL }}/{{ article.url }}"
+          rel="bookmark"
+          title="Permalink to '{{ article.title | striptags }}'">
+          {{ article.title }}
+        </a>
+      </h1></header>
+      {% include 'parts/article-info.html' %}
+      <div class="content">
+        {{ article.summary }}
+        <div class="read-more">
+          <a href="{{ SITEURL }}/{{ article.url }}">
+            ...More
+          </a>
+        </div>
+      </div><!-- /content -->
+    </article></li>
+  {% endfor %}
+  </ol><!-- /#posts-list -->
+  {% include 'parts/pagination.html' %}
 </div><!-- /#content -->
 {% endblock content %}
