@@ -1,3 +1,88 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto+Slab:400|Monda:700,400|Inconsolata);
+
+body {
+    background: #F2F2F2;
+}
+
+#all-text {
+    font-family: "Open Sans", Arial, sans-serif;
+    text-align: left;
+    color: #101010;
+    width: 100%;
+    line-height: 150%;
+    max-width: 50em;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto Slab", Times, serif;
+    font-weight: 400;
+}
+
+a:link {
+    color: #C74451;
+}
+
+a:visited {
+    color: #A137A1;
+}
+
+#blog-title {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    line-height: 100%;
+    font-size: 250%;
+    font-family: "Monda", Arial, sans-serif;
+    font-weight: 700;
+}
+
+#blog-subtitle {
+    font-size: 65%;
+    font-weight: 400;
+}
+
+#main-banner a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#main-banner nav {
+    font-family: "Roboto Slab";
+    background: #101010;
+    color: #fff;
+    border-radius: 0.5em;
+}
+
+#main-banner nav ul {
+    list-style: none;
+}
+
+#main-banner nav li {
+    display: inline;
+}
+
+#main-banner nav a {
+    display: inline-block;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+}
+
+#main-banner nav a:hover {
+    color: #C74451;
+}
+
+#main-banner nav a.active {
+    background: #C74451;
+}
+
+#main-banner nav a.active:hover {
+    color: #fff;
+}
+
+
+
 /* Icons */
 .social a[href*='about.me'] {background-image: url('../images/icons/aboutme.png');}
 .social a[href*='bitbucket.org'] {background-image: url('../images/icons/bitbucket.png');}
