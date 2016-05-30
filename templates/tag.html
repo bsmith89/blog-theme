@@ -1,7 +1,9 @@
 {% extends "index.html" %}
 
-{% block title %}{{ tag }} - {{ SITENAME }}{% endblock %}
+{% block title %}
+{{ tag }} - {{ SITENAME }}
+{% endblock %}
 
-{% block content_title %}
+{% block page_title %}
 Articles tagged <em>{{ tag }}</em>
-{% endblock content_title %}
+{% endblock page_title %}

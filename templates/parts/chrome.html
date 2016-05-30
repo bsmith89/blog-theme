@@ -1,0 +1,49 @@
+<!-- page-chrome -->
+<h1 id="blog-title">
+  <a href="{{ SITEURL }}/">
+    {{ SITENAME }}
+    {% if SITESUBTITLE %}
+    <span id="blog-subtitle">
+      {{ SITESUBTITLE }}
+    </span>
+    {% endif %}
+  </a>
+</h1>
+
+<nav>
+  <ul>
+    {% for title, link in MENUITEMS %}
+    <li>
+      <a href="{{ link }}">
+        {{ title }}
+      </a>
+    </li>
+    {% endfor %}
+    {% if DISPLAY_PAGES_ON_MENU %}
+    {% for each_page in PAGES %}
+    <li>
+      <a href="{{ SITEURL }}/{{ each_page.url }}"
+         {% if each_page == page %}
+         class="active-category"
+         {% endif %}
+         >
+        {{ each_page.title }}
+      </a>
+    </li>
+    {% endfor %}
+    {% endif %}
+    {% if DISPLAY_CATEGORIES_ON_MENU %}
+    {% for cat, null in categories %}
+    <li>
+      <a href="{{ SITEURL }}/{{ cat.url }}"
+        {% if cat == category %}
+        class="active-category"
+        {% endif %}>
+        {{ cat }}
+      </a>
+    </li>
+    {% endfor %}
+    {% endif %}
+  </ul>
+</nav>
+<!-- /page-chrome -->

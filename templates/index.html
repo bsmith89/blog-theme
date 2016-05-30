@@ -1,36 +1,42 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block page_content %}
 <div class="index">
-  <h1 id="main-title">
-    {% block content_title %}
-    <!--
-    All articles
-    -->
-    {% endblock %}
-  </h1>
+  <header>
+    <h1 id="page-title">
+      {% block page_title %}
+      {% endblock page_title %}
+
+    </h1>
+  </header>
   <ol id="entry-list">
-  {% for article in articles_page.object_list %}
-    <li><article class="entry">
-      <header><h1 class="title">
-        <a  href="{{ SITEURL }}/{{ article.url }}"
-          rel="bookmark"
-          title="Permalink to '{{ article.title | striptags }}'">
-          {{ article.title }}
-        </a>
-      </h1></header>
-      {% include 'parts/article-info.html' %}
-      <div class="content">
-        {{ article.summary }}
-        <div class="read-more">
-          <a href="{{ SITEURL }}/{{ article.url }}">
-            ...More
-          </a>
+    {% for article in articles_page.object_list %}
+    <li>
+      <article class="entry">
+        <header>
+          <h1 class="headline">
+            <a href="{{ SITEURL }}/{{ article.url }}"
+               rel="bookmark"
+               title="Permalink to '{{ article.title | striptags }}'">
+              {{ article.title }}
+            </a>
+          </h1>
+        </header>
+        {% include 'parts/article-info.html' %}
+
+        <div class="article-content">
+          {{ article.summary }}
+          <div class="read-more">
+            <a href="{{ SITEURL }}/{{ article.url }}">
+              ...More
+            </a>
+          </div>
         </div>
-      </div><!-- /content -->
-    </article></li>
-  {% endfor %}
-  </ol><!-- /#posts-list -->
+      </article>
+    </li>
+    {% endfor %}
+  </ol>
   {% include 'parts/pagination.html' %}
-</div><!-- /#content -->
-{% endblock content %}
+
+</div>
+{% endblock page_content %}

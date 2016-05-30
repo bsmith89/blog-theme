@@ -50,9 +50,15 @@
   <div class="tags">
     <span class="info-tag">tags:</span>
     <span class="info-value" itemprop="keywords">
-      {% for tag in article.tags %}
-      <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-      {% endfor %}
+      <ul>
+        {% for tag in article.tags %}
+        <li>
+          <a href="{{ SITEURL }}/{{ tag.url }}">
+            {{ tag }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
     </span>
   </div><!-- /.tags -->
   {% endif %}

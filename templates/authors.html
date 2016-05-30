@@ -1,21 +1,21 @@
 {% extends "base.html" %}
 
 {% block title %}
-{{ SITENAME }} - Tags
+{{ SITENAME }} - Authors
 {% endblock title %}
 
 {% block page_content %}
 <div class="index">
   <header>
     <h1 id="page-title">
-      Tags for {{ SITENAME }}
+      Authors for {{ SITENAME }}
     </h1>
   </header>
-  <ul id="tag-list">
-    {% for tag, article in tags | sort %}
+  <ul id="author-list">
+    {% for author, articles in authors %}
     <li>
-      <a href="{{ SITEURL }}/{{ tag.url }}">
-        {{ tag }}
+      <a href="{{ SITEURL }}/{{ author.url }}">
+        {{ author }}
       </a>
     </li>
     {% endfor %}
