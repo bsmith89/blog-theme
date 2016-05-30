@@ -109,6 +109,10 @@ blockquote em {
     font-weight: 600;
 }
 
+figcaption {
+    font-style: italic;
+}
+
 #page-content img {
     width: 90%;
 }
