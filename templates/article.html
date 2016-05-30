@@ -9,6 +9,11 @@
         {{ article.title }}
       </a>
     </h1>
+    {% if article.subtitle %}
+    <h3 id="page-subtitle" class="headline subtitle">
+      {{ article.subtitle }}
+    </h3>
+    {% endif %}
   </header>
   {% include 'parts/article-info.html' %}
 
