@@ -98,6 +98,7 @@ pre, code {
 pre {
     padding: 1em;
     border-radius: 0.2em;
+    overflow: scroll;
 }
 
 blockquote {
@@ -109,12 +110,18 @@ blockquote em {
     font-weight: 600;
 }
 
-figcaption {
-    font-style: italic;
+#page-content figure img {
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
-#page-content img {
-    width: 90%;
+@media (max-width: 500px) {
+    #page-content figure img {
+        width: 100%;
+        padding-left: 0%;
+        padding-right: 0%;
+    }
 }
 
 #page-content img.half-width {
