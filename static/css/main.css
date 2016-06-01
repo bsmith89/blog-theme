@@ -185,19 +185,15 @@ footer.article-info  ul.article-tag-list li + li:before {
     }
 }
 
-footer#bottom .page-info {
-    font-size: 90%;
-}
-
-footer#bottom #powered-by {
-    background: #fff;
+footer#bottom #theme-info {
+    font-size: 80%;
     padding: 1em 4em;
     border-radius: 0.5em;
+    text-align: center;
 }
 
-footer#bottom #designed-by {
-    text-align: right;
-    margin: 1em 1em;
+footer#bottom #site-copyright {
+    font-style: italic;
 }
 
 ol#entry-list {
