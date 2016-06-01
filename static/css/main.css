@@ -47,7 +47,7 @@ a:visited {
 }
 
 #main-banner nav {
-    font-family: "Roboto Slab";
+    font-family: "Roboto Slab" arial sans-serif;
     background: #101010;
     color: #fff;
     border-radius: 0.5em;
@@ -87,7 +87,7 @@ a:visited {
 }
 
 pre, code {
-    font-family: "Inconsolata";
+    font-family:  "Inconsolata" menlo monospace;
     line-height: 120%;
     background: lightgrey;
     tab-size: 4;
