@@ -124,8 +124,15 @@ blockquote em {
     }
 }
 
-#page-content img.half-width {
+#page-content figure img.half-width {
     width: 40%;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+#page-content figcaption {
+    font-style: italic;
+    text-align: center;
 }
 
 footer.article-info address {
