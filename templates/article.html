@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block title %}
+{{ SITENAME }} - {{ article.title | striptags }}
+{% endblock title %}
+
 {% block page_content %}
 <article itemscope itemtype="http://schema.org/BlogPosting">
   <header>
