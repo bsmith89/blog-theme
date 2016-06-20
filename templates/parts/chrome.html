@@ -24,7 +24,7 @@
     <li>
       <a href="{{ SITEURL }}/{{ each_page.url }}"
          {% if each_page == page %}
-         class="active-category"
+         class="active"
          {% endif %}
          >
         {{ each_page.title }}
@@ -37,7 +37,7 @@
     <li>
       <a href="{{ SITEURL }}/{{ cat.url }}"
         {% if cat == category %}
-        class="active-category"
+        class="active"
         {% endif %}>
         {{ cat }}
       </a>
