@@ -20,7 +20,7 @@
     </li>
     {% endfor %}
     {% if DISPLAY_PAGES_ON_MENU %}
-    {% for each_page in PAGES %}
+    {% for each_page in pages %}
     <li>
       <a href="{{ SITEURL }}/{{ each_page.url }}"
          {% if each_page == page %}
