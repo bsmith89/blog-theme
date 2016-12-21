@@ -9,7 +9,6 @@ body {
     text-align: left;
     color: #101010;
     width: 100%;
-    line-height: 150%;
     max-width: 50em;
     margin: 0 auto;
 }
@@ -17,6 +16,10 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto Slab', Times, serif;
     font-weight: 400;
+}
+
+#page-title {
+    font-size: 2em;
 }
 
 article h2 {
